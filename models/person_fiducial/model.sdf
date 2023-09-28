@@ -46,7 +46,7 @@
 
     <include>
       <uri>model://fiducial</uri>
-      <pose>0 0.05 1.4 1.57 0 0</pose>
+      <pose>0 0.05 1.2 1.57 0 0</pose>
     </include>
     <joint name="fiducial_joint" type="fixed">
       <child>fiducial::link</child>

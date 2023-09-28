@@ -1,0 +1,9 @@
+<sdf version="1.4">
+  <world name="sensors_field">
+    <model name="person">
+      <include>
+        <uri>model://person_fiducial</uri>
+      </include>
+    </model>
+  </world>
+</sdf>
