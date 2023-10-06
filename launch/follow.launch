@@ -1,0 +1,18 @@
+<launch>
+
+  <arg name="map_file" default="$(find fetch_gazebo_demo)/maps/test_zone.yaml" />
+
+  <include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+    <arg name="map_file" value="$(arg map_file)" />
+  </include>
+
+  <include file="$(find sensors_and_control)/launch/track_single.launch" />
+
+  <node pkg="sensors_and_control" type="sensors_and_control_follow"
+    name="sensors_and_control_follow">
+    <remap from="/camera_info" to="/head_camera/rgb/camera_info" />
+    <remap from="/marker_pose" to="/aruco_single/pose" />
+    <remap from="/waypoint" to="/move_base_simple/goals" />
+  </node>
+
+</launch>
