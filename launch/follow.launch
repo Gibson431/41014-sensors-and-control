@@ -12,7 +12,7 @@
     name="sensors_and_control_follow">
     <remap from="/camera_info" to="/head_camera/rgb/camera_info" />
     <remap from="/marker_pose" to="/aruco_single/pose" />
-    <remap from="/waypoint" to="/move_base_simple/goals" />
+    <remap from="/waypoint" to="/move_base_simple/goal" />
   </node>
 
 </launch>
