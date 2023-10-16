@@ -6,16 +6,24 @@
       <collision name="collision">
         <geometry>
           <!-- Box or plane geometry is used -->
-        <box><size>0.25 0.25 0.002</size></box></geometry>
+          <box>
+            <size>0.25 0.25 0.002</size>
+          </box>
+        </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <!-- Box or plane geometry is used -->
-        <box><size>0.25 0.25 0.002</size></box></geometry>
+          <box>
+            <size>0.25 0.25 0.002</size>
+          </box>
+        </geometry>
         <material>
           <script>
             <name>marker_id_9</name>
-          <uri>model://fiducial/materials/scripts/</uri><uri>model://fiducial/materials/textures/</uri></script>
+            <uri>model://fiducial/materials/scripts/</uri>
+            <uri>model://fiducial/materials/textures/</uri>
+          </script>
         </material>
       </visual>
     </link>

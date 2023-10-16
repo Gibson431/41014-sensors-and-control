@@ -25,46 +25,14 @@
       <pose>3.8 3.15 0.83 0 0 0</pose>
     </include>
 
-    <!-- <actor name="actor"> -->
-    <!--   <link name="person_link"> -->
-    <!--     <visual name="person_visual"> -->
-    <!--       <geometry> -->
-    <!--         <mesh> -->
-    <!--           <uri>model://person_fiducial/meshes/standing.dae</uri> -->
-    <!--         </mesh> -->
-    <!--       </geometry> -->
-    <!--     </visual> -->
-    <!--   </link> -->
-    <!--   <pose>3 0 0 0 0 0</pose> -->
-    <!--   <script> -->
-    <!--     <trajectory id="0" type="walking"> -->
-    <!--       <waypoint> -->
-    <!--         <time>0</time> -->
-    <!--         <pose>0 1 0 0 0 0</pose> -->
-    <!--       </waypoint> -->
-    <!--       <waypoint> -->
-    <!--         <time>0.5</time> -->
-    <!--         <pose>0.1950 0.9807 0 0 0 -0.1963</pose> -->
-    <!--       </waypoint> -->
-    <!--       <waypoint> -->
-    <!--         <time>1</time> -->
-    <!--         <pose>0.3826 0.9238 0 0 0 -0.3926</pose> -->
-    <!--       </waypoint> -->
-    <!--       <waypoint> -->
-    <!--         <time>1.5</time> -->
-    <!--         <pose>0.5555 0.831 0 0 0 -0.589</pose> -->
-    <!--       </waypoint> -->
-    <!--     </trajectory> -->
-    <!--   </script> -->
-    <!-- </actor> -->
+    <!-- <model name="person"> -->
+    <!--   <include> -->
+    <!--     <uri>model://person_fiducial</uri> -->
+    <!--     <pose>7 0 0 0 0 1.57</pose> -->
+    <!--   </include> -->
+    <!-- </model> -->
 
-
-    <model name="person">
-      <include>
-        <uri>model://person_fiducial</uri>
-        <pose>5 0 0 0 0 1.57</pose>
-      </include>
-    </model>
+    <plugin name="ros_link_attacher_plugin" filename="libgazebo_ros_link_attacher.so" />
 
   </world>
 </sdf>

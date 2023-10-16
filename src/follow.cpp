@@ -6,6 +6,7 @@
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/LaserScan.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include <tf2/utils.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 class FetchFollower {
@@ -28,15 +29,24 @@ public:
     tf2::Quaternion input_quat, rotation_quat, result_quat;
     tf2::fromMsg(newPose.pose.orientation, input_quat);
 
-    rotation_quat.setRPY(0.0, -M_PI / 2, 0.0);
+    // rotation_quat.setRPY(0.0, -M_PI / 2, 0.0);
+    // result_quat = input_quat * rotation_quat;
+
+    rotation_quat.setRPY(-M_PI / 2, 0.0, 0.0);
     result_quat = input_quat * rotation_quat;
 
-    rotation_quat.setRPY(0.0, 0.0, M_PI);
+    rotation_quat.setRPY(0.0, 0.0, M_PI / 2);
     result_quat = result_quat * rotation_quat;
 
     newPose.pose.orientation = tf2::toMsg(result_quat);
 
-    newPose.pose.position.x -= 2;
+    double r, p, y;
+
+    tf2::getEulerYPR(result_quat, y, p, r);
+    // newPose.pose.position.x -= 2 * cos(result_quat.getZ());
+    // newPose.pose.position.y -= 2 * sin(result_quat.getZ());
+    newPose.pose.position.x -= 2 * cos(y);
+    newPose.pose.position.y -= 2 * sin(y);
 
     marker_pub_.publish(newPose);
   }

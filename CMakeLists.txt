@@ -208,3 +208,9 @@ target_link_libraries(${PROJECT_NAME}_follow
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+install(
+  PROGRAMS
+    scripts/spawn_marker_on_robot
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
