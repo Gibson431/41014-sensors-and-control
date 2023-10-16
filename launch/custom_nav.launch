@@ -51,6 +51,8 @@
   </include>
 
   <!-- tilt the head -->
-  <node pkg="sensors_and_control" type="sensors_and_control_gaze" name="gaze_node" />
+  <node pkg="sensors_and_control" type="sensors_and_control_gaze" name="gaze_node">
+    <remap from="/marker_pose" to="/aruco_single/pose" />
+  </node>
 
 </launch>

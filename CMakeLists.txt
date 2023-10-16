@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   rosbag # Needed to rosbag manipulation
   roslib # Needed for ros::package::getPath
+  actionlib
+  control_msgs
 )
 
 ## System dependencies are found with CMake's conventions

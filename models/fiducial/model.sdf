@@ -1,8 +1,11 @@
 <sdf version="1.5">
   <model name="fiducial">
-    <static>true</static>
+    <static>false</static>
     <link name="link">
       <pose>0.0 0.0 0.001 0.0 0.0 0.0</pose>
+      <inertial>
+        <mass>0.0001</mass>
+      </inertial>
       <collision name="collision">
         <geometry>
           <!-- Box or plane geometry is used -->

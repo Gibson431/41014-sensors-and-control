@@ -38,8 +38,6 @@ public:
     rotation_quat.setRPY(0.0, 0.0, M_PI / 2);
     result_quat = result_quat * rotation_quat;
 
-    newPose.pose.orientation = tf2::toMsg(result_quat);
-
     double r, p, y;
 
     tf2::getEulerYPR(result_quat, y, p, r);
@@ -47,6 +45,10 @@ public:
     // newPose.pose.position.y -= 2 * sin(result_quat.getZ());
     newPose.pose.position.x -= 2 * cos(y);
     newPose.pose.position.y -= 2 * sin(y);
+
+    result_quat.setRPY(0, 0, y);
+
+    newPose.pose.orientation = tf2::toMsg(result_quat);
 
     marker_pub_.publish(newPose);
   }

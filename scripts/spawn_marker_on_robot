@@ -37,15 +37,17 @@ def main():
 
     # Initialize model names
     # robot_name = rospy.get_namespace()[1:-1]
-    robot_name = 'turtlebot_with_marker'
+    robot_name = 'turtlebot'
     # marker_name = robot_name + '_marker'
     # marker_name = 'fiducial'
-    marker_name = 'person_fiducial'
+    marker_name = 'fiducial'
 
     # Compute marker pose based on current robot pose
     marker_pose = get_model_pose(robot_name)
     marker_pose.position.x -= 0.05
     marker_pose.position.z = 1.1
+    # marker_pose.position.z = 0.0
+    # marker_pose.orientation = Quaternion(*quaternion_from_euler(0, 0, pi/2))
     marker_pose.orientation = Quaternion(*quaternion_from_euler(0, pi/2, 0))
 
     # Compute spawn model request
