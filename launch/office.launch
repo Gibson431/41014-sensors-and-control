@@ -25,15 +25,17 @@
     <arg name="headless" value="$(arg headless)" />
   </include>
 
-  <include
-    file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
-    <arg name="x" value="0.0" />
-    <arg name="y" value="0.0" />
-    <arg name="z" value="0.0" />
-  </include>
+  <group ns="fetch">
+    <include
+      file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
+      <arg name="x" value="0.0" />
+      <arg name="y" value="0.0" />
+      <arg name="z" value="0.0" />
+    </include>
+  </group>
 
   <group ns="turtlebot">
-    <param name="robot_description"
+    <param name="guide_description"
       command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"
@@ -43,7 +45,7 @@
     </node>
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-      args="-urdf -model turtlebot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+      args="-urdf -model turtlebot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param guide_description" />
   </group>
 
   <node name="spawn_marker_on_robot" pkg="sensors_and_control"
