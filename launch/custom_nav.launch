@@ -51,6 +51,6 @@
   </include>
 
   <!-- tilt the head -->
-  <!-- <node pkg="fetch_navigation" type="tilt_head.py" name="tilt_head_node" /> -->
+  <node pkg="sensors_and_control" type="sensors_and_control_gaze" name="gaze_node" />
 
 </launch>
