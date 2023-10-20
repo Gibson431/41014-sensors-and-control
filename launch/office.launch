@@ -13,7 +13,6 @@
   <arg name="z_pos" default="0.0" />
 
 
-  <!-- MAKE A NAMESPACE FOR FETCH FOR NAV WITH TURTLEBOT -->
   <!-- Start Gazebo with a blank world -->
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -25,14 +24,15 @@
     <arg name="headless" value="$(arg headless)" />
   </include>
 
-  <group ns="fetch">
-    <include
-      file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
-      <arg name="x" value="0.0" />
-      <arg name="y" value="0.0" />
-      <arg name="z" value="0.0" />
-    </include>
-  </group>
+  <!-- MAKE A NAMESPACE FOR FETCH FOR NAV WITH TURTLEBOT -->
+  <!-- <group ns="fetch"> -->
+  <include
+    file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
+    <arg name="x" value="0.0" />
+    <arg name="y" value="0.0" />
+    <arg name="z" value="0.0" />
+  </include>
+  <!-- </group> -->
 
   <group ns="turtlebot">
     <param name="guide_description"
