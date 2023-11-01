@@ -10,6 +10,7 @@ Timothy Gibson, Ruby Kasif, Anthony Chalhoub
 
 - [Fetch Robot System](https://fetchrobotics.com/)
     - [fetch_ros](https://github.com/ZebraDevs/fetch_ros)
+    - [fetch_gazebo](https://github.com/ZebraDevs/fetch_gazebo.git)
 - [Turtlebot 3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
     - [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
     - [turtlebot3_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
@@ -20,7 +21,7 @@ Timothy Gibson, Ruby Kasif, Anthony Chalhoub
 
 ## Usage
 
-`simulation.launch` - creates an empty gazebo world with the fetch robot and a turtlebot3 with an aruco fiducial mounted above it
+`office.launch` - creates a gazebo world with the fetch robot and a turtlebot3 with an aruco fiducial mounted above it
 
 `follow.launch` - starts the aruco tracking node and the navigation nodes for both guide and follower
 
