@@ -21,7 +21,7 @@ Timothy Gibson, Ruby Kasif, Anthony Chalhoub
 
 ## Usage
 
-`simulation.launch` - creates an empty gazebo world with the fetch robot and a turtlebot3 with an aruco fiducial mounted above it
+`office.launch` - creates a gazebo world with the fetch robot and a turtlebot3 with an aruco fiducial mounted above it
 
 `follow.launch` - starts the aruco tracking node and the navigation nodes for both guide and follower
 
